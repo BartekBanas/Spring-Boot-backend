@@ -21,8 +21,13 @@ public class ClassController {
     public void deleteClass(@PathVariable("id") int id) {
         for (Class group : ClassContainer.listOfClasses) {
             System.out.println("On the hunt for class " + id);
+
             if (group.ID == id) {
                 ClassContainer.listOfClasses.remove(group);
+
+                for (Student student : group.studentsList) {
+                    group.studentsList.remove(student);
+                }
 
                 System.out.println("We got him!");
             }
