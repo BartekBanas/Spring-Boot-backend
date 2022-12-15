@@ -14,11 +14,11 @@ public class Lab5Application {
 
 
     private static void InitializeThis() {
-        Student s1 = new Student("John", "Cena", StudentCondition.present, 2000, 7);
-        Student s2 = new Student("Alex", "Woodrow", StudentCondition.present, 2001, 0);
-        Student s3 = new Student("Petter", "Griffin", StudentCondition.present, 1998, 2);
-        Student s4 = new Student("Randy", "Marsh", StudentCondition.present, 1999, 5);
-        Student s5 = new Student("Matt", "Wentworth", StudentCondition.present, 2000, 9);
+        Student s1 = new Student(1, "John", "Cena", StudentCondition.present, 2000, 7);
+        Student s2 = new Student(2, "Alex", "Woodrow", StudentCondition.present, 2001, 0);
+        Student s3 = new Student(3, "Petter", "Griffin", StudentCondition.present, 1998, 2);
+        Student s4 = new Student(4, "Randy", "Marsh", StudentCondition.present, 1999, 5);
+        Student s5 = new Student(5, "Matt", "Wentworth", StudentCondition.present, 2000, 9);
 
         ClassContainer.addClass("Programming", 8);
         ClassContainer.addClass("metallurgy", 100);

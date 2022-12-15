@@ -21,6 +21,15 @@ public class Student implements Comparable<Student> {
         this.points = points;
     }
 
+    public Student(int ID, String name, String surname, StudentCondition studentCondition, int birthYear, double points) {
+        this.ID = ID;
+        this.name = name;
+        this.surname = surname;
+        this.studentCondition = studentCondition;
+        this.birthYear = birthYear;
+        this.points = points;
+    }
+
     public Student(String name, String surname) {
         this.name = name;
         this.surname = surname;

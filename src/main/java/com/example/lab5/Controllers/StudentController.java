@@ -32,11 +32,12 @@ public class StudentController {
         }
     }
 
-    @DeleteMapping
-    public void deleteStudent(int ID) {
+    @DeleteMapping(path = "/api/student/:{id}")
+    public void deleteStudent(@PathVariable int id) {
         for (Class group : ClassContainer.listOfClasses) {
             for (Student student : group.studentsList) {
-                if(student.ID == ID) {
+                System.out.println("On the hunt for " + id);
+                if(student.ID == id) {
                     group.studentsList.remove(student);
 
                     System.out.println("We got him!");
