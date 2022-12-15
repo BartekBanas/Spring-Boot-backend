@@ -9,6 +9,23 @@ public class Class {
 
     public int capacity;
 
+    public Class() {
+        for (int i = 1; true ; i++) {
+            boolean taken = false;
+            for (Class group : ClassContainer.listOfClasses) {
+                if (group.ID == i) {
+                    taken = true;
+                    break;
+                }
+            }
+
+            if(!taken) {
+                this.ID = i;
+                return;
+            }
+        }
+    }
+
     public Class(String className) {
         this.className = className;
         this.capacity = 20;
@@ -48,6 +65,8 @@ public class Class {
             }
         }
     }
+
+
 
     public Class(String className, int capacity, int id) {
         this.className = className;

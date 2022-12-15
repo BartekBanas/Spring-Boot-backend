@@ -50,6 +50,12 @@ public class ClassController {
         );
     }
 
+    @PostMapping
+    public void registerStudent(@ModelAttribute Class course) {
+        System.out.println(course);
+        ClassContainer.setClass(course);
+    }
+
     @DeleteMapping(path = "{id}")
     public void deleteClass(@PathVariable("id") int id) {
         List<Class> listToRemove = new ArrayList<>();
@@ -74,6 +80,4 @@ public class ClassController {
             ClassContainer.listOfClasses.remove(course);
         }
     }
-
-
 }
