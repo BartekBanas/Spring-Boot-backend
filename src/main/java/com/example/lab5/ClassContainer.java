@@ -15,7 +15,7 @@ public class ClassContainer {
 
     static Map<String, Class> garbageClassMap = new LinkedHashMap<>();
 
-    static List<Class> listOfClasses = new ArrayList<>();
+    public static List<Class> listOfClasses = new ArrayList<>();
 
     public static void setClass(Class clas) {
         garbageClassMap.put(name, new Class(clas.className, clas.capacity, clas.ID));
