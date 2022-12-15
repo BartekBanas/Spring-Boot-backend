@@ -7,7 +7,7 @@ public class Class {
     public String className;
     public List<Student> studentsList = new ArrayList<>();
 
-    int capacity;
+    public int capacity;
 
     public Class(String className) {
         this.className = className;

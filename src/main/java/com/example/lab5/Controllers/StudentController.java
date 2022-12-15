@@ -3,7 +3,9 @@ package com.example.lab5.Controllers;
 import com.example.lab5.Class;
 import com.example.lab5.ClassContainer;
 import com.example.lab5.Student;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,14 +40,20 @@ public class StudentController {
             List<Student> listToRemove = new ArrayList<>();
 
             for (Student student : group.studentsList) {
-                System.out.println("On the hunt for " + id);
                 if(student.ID == id) {
                     listToRemove.add(student);
 
                     System.out.println("We got him!");
                 }
             }
-            for(var student : listToRemove){
+
+            if(listToRemove.isEmpty()) {
+                throw new ResponseStatusException(
+                        HttpStatus.NOT_FOUND, "entity not found"
+                );
+            }
+
+            for (var student : listToRemove) {
                 group.studentsList.remove(student);
             }
         }
