@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Lab5Application {
 
     public static void main(String[] args) {
-        //InitializeThis();
+        InitializeThis();
 
         SpringApplication.run(Lab5Application.class, args);
     }

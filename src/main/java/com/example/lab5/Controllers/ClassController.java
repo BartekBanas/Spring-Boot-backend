@@ -14,6 +14,13 @@ public class ClassController {
 
     @GetMapping
     public List<Class> getClasses(){
-        return ClassContainer.listOfClasses;
+        return List.of(
+                new Class(
+                        "Kanapki",
+                        20)
+
+        );
+
+        //return ClassContainer.listOfClasses;
     }
 }

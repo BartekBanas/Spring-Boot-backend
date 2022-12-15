@@ -5,7 +5,7 @@ import java.util.*;
 public class Class {
     int ID;
     String className;
-    List<Student> studentsList = new ArrayList<>();
+    public List<Student> studentsList = new ArrayList<>();
 
     int capacity;
 
@@ -26,6 +26,15 @@ public class Class {
         this.className = className;
         this.capacity = capacity;
         this.ID = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Class{" +
+                "ID=" + ID +
+                ", className='" + className + '\'' +
+                ", capacity=" + capacity +
+                '}';
     }
 
     public void addStudent(Student student) {
