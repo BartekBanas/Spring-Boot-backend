@@ -3,8 +3,8 @@ package com.example.lab5;
 import java.util.*;
 
 public class Class {
-    int ID;
-    String className;
+    public int ID;
+    public String className;
     public List<Student> studentsList = new ArrayList<>();
 
     int capacity;

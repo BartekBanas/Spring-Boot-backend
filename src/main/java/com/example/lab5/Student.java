@@ -36,6 +36,16 @@ public class Student implements Comparable<Student> {
         this.ID = id;
     }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "ID=" + ID +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", points=" + points +
+                '}';
+    }
+
     public void print() {
         System.out.println("Student " + name + " " + surname + "");
         System.out.println("- Student's Condition: " + studentCondition);
