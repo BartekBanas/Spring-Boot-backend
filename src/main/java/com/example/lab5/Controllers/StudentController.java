@@ -22,8 +22,8 @@ public class StudentController {
         return listToReturn;
     }
 
-    @PostMapping(path = ":{id}")
-    public void registerStudent(Student student, @PathVariable("id") int id) {
+    @PostMapping(path = "{id}")
+    public void registerStudent(@ModelAttribute Student student, @PathVariable("id") int id) {
         System.out.println(student);
         for (Class group : ClassContainer.listOfClasses) {
             if(group.ID == id) {
@@ -35,20 +35,19 @@ public class StudentController {
     @DeleteMapping(path = "{id}")
     public void deleteStudent(@PathVariable("id") int id) {
         for (Class group : ClassContainer.listOfClasses) {
+            List<Student> listToRemove = new ArrayList<>();
+
             for (Student student : group.studentsList) {
                 System.out.println("On the hunt for " + id);
                 if(student.ID == id) {
-                    group.studentsList.remove(student);
+                    listToRemove.add(student);
 
                     System.out.println("We got him!");
                 }
             }
+            for(var student : listToRemove){
+                group.studentsList.remove(student);
+            }
         }
     }
-
-//    @DeleteMapping
-//    @RequestMapping(path = "/api/student/:{id} ")
-//    public int deleteStudent(){
-//
-//    }
 }

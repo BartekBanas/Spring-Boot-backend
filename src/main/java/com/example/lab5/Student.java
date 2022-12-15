@@ -4,6 +4,30 @@ public class Student implements Comparable<Student> {
     public int ID;
     String name;
     String surname;
+
+    public Student() {
+    }
+
+    public void setId(int ID) {
+        this.ID = ID;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
     StudentCondition studentCondition;
     int birthYear;
 

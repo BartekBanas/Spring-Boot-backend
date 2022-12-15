@@ -55,6 +55,22 @@ public class Class {
         this.ID = id;
     }
 
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public void setClassName(String className) {
+        this.className = className;
+    }
+
+    public void setStudentsList(List<Student> studentsList) {
+        this.studentsList = studentsList;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
     @Override
     public String toString() {
         return "Class{" +
