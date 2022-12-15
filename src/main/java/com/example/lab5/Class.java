@@ -1,3 +1,5 @@
+package com.example.lab5;
+
 import java.util.*;
 
 public class Class {

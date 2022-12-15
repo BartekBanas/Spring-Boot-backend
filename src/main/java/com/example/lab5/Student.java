@@ -1,3 +1,5 @@
+package com.example.lab5;
+
 public class Student implements Comparable<Student> {
     String name;
     String surname;
