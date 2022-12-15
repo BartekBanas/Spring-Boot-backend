@@ -3,6 +3,7 @@ package com.example.lab5;
 import java.util.*;
 
 public class Class {
+    int ID;
     String className;
     List<Student> studentsList = new ArrayList<>();
 
@@ -21,8 +22,20 @@ public class Class {
         this.capacity = capacity;
     }
 
+    public Class(String className, int capacity, int id) {
+        this.className = className;
+        this.capacity = capacity;
+        this.ID = id;
+    }
+
     public void addStudent(Student student) {
-        if(studentsList.size() < capacity) {
+        if (studentsList.size() < capacity) {
+            studentsList.add(student);
+        }
+    }
+
+    public void setStudent(Student student) {
+        if (studentsList.size() < capacity) {
             studentsList.add(student);
         }
     }
@@ -54,22 +67,11 @@ public class Class {
         student.points -= amount;
     }
 
-    public Student search(String searchedSurname) {
-        for (Student student : studentsList) {
-            if (student.surname.compareTo(searchedSurname) == 0) {
-                return student;
-            }
-        }
-
-        System.out.println("Student of a given name could not be found\n");
-        return new Student("non-existent", "non-existent", StudentCondition.ill, 0, 0);
-    }
-
     public List<Student> searchPartial(String partOfSurname) {
         List<Student> listToReturn = new ArrayList<>();
 
         for (Student student : studentsList) {
-            if(student.surname.toLowerCase().contains(partOfSurname.toLowerCase()) ||
+            if (student.surname.toLowerCase().contains(partOfSurname.toLowerCase()) ||
                     student.name.toLowerCase().contains(partOfSurname.toLowerCase()))
                 listToReturn.add(student);
         }

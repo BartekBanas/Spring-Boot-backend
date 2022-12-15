@@ -3,9 +3,24 @@ package com.example.lab5;
 import java.util.*;
 
 public class ClassContainer {
+    public String name = "College";
+    public int ID = 0;
+
+    public ClassContainer() {
+    }
+
+    public ClassContainer(String name) {
+        this.name = name;
+    }
+
     Map<String, Class> garbageClassMap = new LinkedHashMap<>();
 
     List<Class> listOfClasses = new ArrayList<>();
+
+    public void setClass(Class clas) {
+        garbageClassMap.put(name, new Class(clas.className, clas.capacity, clas.ID));
+        listOfClasses.add(garbageClassMap.get(name));
+    }
 
     public void addClass(String name, int capacity) {
         garbageClassMap.put(name, new Class(name, capacity));

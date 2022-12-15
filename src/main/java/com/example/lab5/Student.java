@@ -1,6 +1,7 @@
 package com.example.lab5;
 
 public class Student implements Comparable<Student> {
+    public int ID;
     String name;
     String surname;
     StudentCondition studentCondition;
@@ -25,6 +26,14 @@ public class Student implements Comparable<Student> {
         this.surname = surname;
         this.studentCondition = StudentCondition.absent;
         this.birthYear = 2000;
+    }
+
+    public Student(String name, String surname, int id) {
+        this.name = name;
+        this.surname = surname;
+        this.studentCondition = StudentCondition.absent;
+        this.birthYear = 2000;
+        this.ID = id;
     }
 
     public void print() {
