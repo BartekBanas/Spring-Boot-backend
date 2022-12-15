@@ -7,6 +7,7 @@ public class ClassContainer {
     public static int ID = 0;
 
     public ClassContainer() {
+
     }
 
     public ClassContainer(String name) {
