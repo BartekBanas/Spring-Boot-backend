@@ -23,11 +23,24 @@ public class StudentController {
     }
 
     @PostMapping
-    public void registerStudent(Student student, int classiD) {
+    public void registerStudent(Student student) {
         System.out.println(student);
         for (Class group : ClassContainer.listOfClasses) {
-            if(group.ID == classiD) {
+            if(group.ID == 1) {
                 group.addStudent(student);
+            }
+        }
+    }
+
+    @DeleteMapping
+    public void deleteStudent(int ID) {
+        for (Class group : ClassContainer.listOfClasses) {
+            for (Student student : group.studentsList) {
+                if(student.ID == ID) {
+                    group.studentsList.remove(student);
+
+                    System.out.println("We got him!");
+                }
             }
         }
     }
