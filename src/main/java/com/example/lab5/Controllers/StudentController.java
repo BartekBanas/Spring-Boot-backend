@@ -22,18 +22,18 @@ public class StudentController {
         return listToReturn;
     }
 
-    @PostMapping
-    public void registerStudent(Student student) {
+    @PostMapping(path = ":{id}")
+    public void registerStudent(Student student, @PathVariable("id") int id) {
         System.out.println(student);
         for (Class group : ClassContainer.listOfClasses) {
-            if(group.ID == 1) {
+            if(group.ID == id) {
                 group.addStudent(student);
             }
         }
     }
 
-    @DeleteMapping(path = "/api/student/:{id}")
-    public void deleteStudent(@PathVariable int id) {
+    @DeleteMapping(path = "{id}")
+    public void deleteStudent(@PathVariable("id") int id) {
         for (Class group : ClassContainer.listOfClasses) {
             for (Student student : group.studentsList) {
                 System.out.println("On the hunt for " + id);
