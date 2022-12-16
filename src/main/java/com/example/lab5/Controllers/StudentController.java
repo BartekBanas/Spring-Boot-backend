@@ -62,6 +62,8 @@ public class StudentController {
 
     @DeleteMapping(path = "{id}")
     public void deleteStudent(@PathVariable("id") int id) {
+        boolean succes = false;
+
         for (Class group : ClassContainer.listOfClasses) {
             List<Student> listToRemove = new ArrayList<>();
 
@@ -73,15 +75,19 @@ public class StudentController {
                 }
             }
 
-            if (listToRemove.isEmpty()) {
-                throw new ResponseStatusException(
-                        HttpStatus.NOT_FOUND, "entity not found"
-                );
+            if (!listToRemove.isEmpty()) {
+                succes = true;
             }
 
             for (var student : listToRemove) {
                 group.studentsList.remove(student);
             }
+        }
+
+        if (!succes) {
+            throw new ResponseStatusException(
+                    HttpStatus.NOT_FOUND, "entity not found"
+            );
         }
     }
 }
